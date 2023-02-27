@@ -1,0 +1,21 @@
+*{
+  padding: 0;
+  margin:0;
+
+}
+
+body{
+background-color:#4F95B4;
+}
+
+.container{
+  background-color:white;
+  width:50%;
+  top:50%;
+  left:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  padding:3em;
+  border-radius:15px;
+  box-shadow:0 2px 4px #89CFF0;
+}
