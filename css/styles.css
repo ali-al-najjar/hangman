@@ -29,7 +29,7 @@ background-color:#4F95B4;
   font-weight:bold;
 }
 
-.categories_container{
+.categories_container div{
   display:flex;
   justify-content: space-around;
   margin-top:10%;
@@ -37,51 +37,109 @@ background-color:#4F95B4;
   margin-bottom:10%;
 
 }
-
-/* .category {
-  padding:10px;
-  border:2px solid #4F95B4;
-  font-weight:bold;
+.categories_container div button {
+  padding:2%;
   text-transform: capitalize;
+  border:2px solid #4F95B4;
   cursor:pointer;
-} */
-
-/* .category:hover{
+  color:#4F95B4;
+  font-weight:bold;
+  border-radius: 5px;
+}
+.categories_container div button.active {
+  padding:2%;
+  text-transform: capitalize;
+  background-color:#4F95B4;
+  color:white;
 
 }
+
+.categories_container div button:hover{
+  padding:2%;
+  text-transform: capitalize;
+  background-color:#4F95B4;
+  color:white;
+
+}
+
+.categories_container div button:disabled{
+  padding:2%;
+  text-transform: capitalize;
+  border:2px solid lightgray;
+  cursor:pointer;
+  color:white;
+  font-weight:bold;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+.categories_container div button:disabled:hover{
+  padding:2%;
+  text-transform: capitalize;
+  border:2px solid lightgray;
+  cursor:pointer;
+  color:white;
+  font-weight:bold;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+
 .letters{
-  padding:10px;
   width:100%;
   display:flex;
   justify-content: center;
   gap:10px;
   flex-wrap: wrap;
+
 }
 
-.letter{
-  padding:10px;
-  margin:10px;
-  font-size:15px;
-  border:2px solid #4F95B4;
+.letters button{
+  padding:2%;
+  text-transform: capitalize;
+  border:2px solid #BA8B6D;
+  cursor:pointer;
+  color:#BA8B6D;
   font-weight:bold;
+  border-radius: 5px;
 }
 
-.letter:hover{
-  padding:10px;
-  margin:10px;
-  font-size:15px;
-  border:2px solid black;
-  font-weight:bold;
-  cursor:pointer;
+.letters button.active{
+  padding:2%;
+  text-transform: capitalize;
+  background-color:#BA8B6D;
+  color:white;
 }
-.letter:active{
-  padding:10px;
-  margin:10px;
-  font-size:15px;
-  border:2px solid black;
-  font-weight:bold;
+
+.letters button:hover{
+  padding:2%;
+  text-transform: capitalize;
+  background-color:#BA8B6D;
+  color:white;
+}
+
+.letters button:disabled{
+  padding:2%;
+  text-transform: capitalize;
+  border:2px solid lightgray;
   cursor:pointer;
-}  */
+  color:white;
+  font-weight:bold;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.letters button:disabled:hover{
+  padding:2%;
+  text-transform: capitalize;
+  border:2px solid lightgray;
+  cursor:pointer;
+  color:white;
+  font-weight:bold;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+
 
 .hide{
   display:none;

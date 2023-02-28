@@ -8,7 +8,7 @@ let count = 0;
 let alphabet = ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 let created_word ="";
 let header = document.getElementById('header');
-
+let flag = false;
 
 let categories_dictionary = {
   cities:["Beirut","Baabda","Baalbeck","Saida","Sour"],
@@ -29,8 +29,11 @@ const createWord = (category) =>{
   categories_buttons.forEach((button) => {
     if (button.innerText.toLowerCase() === category){
       button.classList.add("active");
+      flag= false;
     }else{
-    button.disabled = true;}
+    button.disabled = true;
+    }
+
   });
  
 }
