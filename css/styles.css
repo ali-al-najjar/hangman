@@ -11,7 +11,7 @@ background-color:#4F95B4;
 
 .container{
   background-color:white;
-  width:50%;
+  max-width: 50%;
   top:50%;
   left:50%;
   position:absolute;
@@ -45,6 +45,8 @@ background-color:#4F95B4;
   color:#4F95B4;
   font-weight:bold;
   border-radius: 5px;
+  width: 30%;
+  font-size: 15px;
 }
 .categories_container div button.active {
   padding:2%;
@@ -144,7 +146,7 @@ background-color:#4F95B4;
   align-items: center;
   gap:5%;
   justify-content: center;
-  margin:10%;
+  margin:5%;
 }
 
 .hide{
