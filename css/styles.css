@@ -139,7 +139,13 @@ background-color:#4F95B4;
   background-color: lightgray;
 }
 
-
+#user_input{
+  display:flex;
+  align-items: center;
+  gap:5%;
+  justify-content: center;
+  margin-top:10%;
+}
 
 .hide{
   display:none;

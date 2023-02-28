@@ -3,6 +3,7 @@ const categories = document.getElementById('categories');
 const letters = document.getElementById("letters");
 const hanging_man = document.getElementById("hanging_man");
 const new_game = document.getElementById("new_game");
+const result = document.getElementById("result");
 const header = document.getElementById('header');
 const alphabet = ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 const user_input = document.getElementById('user_input');
@@ -18,7 +19,6 @@ const categories_dictionary = {
   cars:["Toyota","Mercedes","Honda","Nissan","Ferrari"],
 };
 
-console.log(categories_dictionary);
 
 const categoriesButtons = () => {
   header.innerHTML = `<div>Choose from the below categories</div>`;
@@ -47,23 +47,48 @@ const createWord = (category) =>{
   let words = categories_dictionary[category];
   word = words[Math.floor(Math.random() * words.length)];
   word = word.toUpperCase();
-  console.log(word);
 
+  let display_word_hidden = word.replace(/./g,`<span class="dashes">_</span>`);
+  user_input.innerHTML=display_word_hidden;
   
 };
 
 
 const alphabetLetter = () => {
   for (let i=0; i<alphabet.length;i++){
-    letters.innerHTML += `<button class = letter>${alphabet[i]}</button`;
+    let button = document.createElement("button");
+    button.classList.add("letter");
+    button.innerText = alphabet[i];
+    letters.append(button);
+
+    button.addEventListener("click",() =>{
+      let letter_array = word.split("");
+      let dashes = document.getElementsByClassName("dashes");
+      if(letter_array.includes(button.innerText)){
+        letter_array.forEach((letter,index) =>{
+          if(letter === button.innerText){
+            dashes[index].innerText = letter;
+            count +=1;
+            if(count == letter_array.length){
+              result.innerHTML=`<div class="winning">You won!</div>`;
+            }
+          }
+        })
+      }
+    })
+    
     
   }
 }
+    
 
 
 const start_game = () => {
   tries = 0;
   count = 0;
+  user_input.innerHTML="";
+  new_game.classList.add("hide");
+  letters.classList.add("hide");
   categoriesButtons();
   alphabetLetter();
   
