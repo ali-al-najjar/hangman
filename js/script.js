@@ -70,10 +70,17 @@ const alphabetLetter = () => {
             dashes[index].innerText = letter;
             count +=1;
             if(count == letter_array.length){
-              result.innerHTML=`<div class="winning">You won!</div>`;
+              result.innerHTML=`<div class="won">You Won! The word was ${word}</div>`;
             }
           }
-        })
+        });
+      }else{
+        tries +=1;
+        // hangMan(tries);
+        if (tries == 6){
+          result.innerHTML=`<div class="lost">You Lost!The word was ${word}</div>`;
+        }
+        button.disabled = true;
       }
     })
     
