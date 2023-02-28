@@ -2,10 +2,15 @@ const categories_container = document.getElementById("categories_container");
 const categories = document.getElementById('categories');
 const letters = document.getElementById("letters");
 const hanging_man = document.getElementById("hanging_man");
+const hanging_img = document.getElementById("hanging_img");
 const new_game = document.getElementById("new_game");
 const result = document.getElementById("result");
 const header = document.getElementById('header');
 const alphabet = ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+const stickman = ["./images/1.png","./images/2.png","./images/3.png","./images/4.png","./images/5.png","./images/6.png"];
+
+
 const user_input = document.getElementById('user_input');
 let tries = 0;
 let count = 0;
@@ -76,7 +81,20 @@ const alphabetLetter = () => {
         });
       }else{
         tries +=1;
-        // hangMan(tries);
+        if(tries === 1){
+           hanging_img.src=stickman[0];
+        }else if(tries === 2){
+          hanging_img.src=stickman[1];
+        }else if(tries === 3){
+          hanging_img.src=stickman[2];
+        }else if(tries === 4){
+          hanging_img.src=stickman[3];
+        }else if(tries === 5){
+          hanging_img.src=stickman[4];
+        }else{
+          hanging_img.src=stickman[5];
+        }
+        
         if (tries == 6){
           result.innerHTML=`<div class="lost">You Lost!The word was ${word}</div>`;
         }
@@ -87,10 +105,8 @@ const alphabetLetter = () => {
     
   }
 }
-    
 
-
-const start_game = () => {
+const startGame = () => {
   tries = 0;
   count = 0;
   user_input.innerHTML="";
@@ -101,10 +117,10 @@ const start_game = () => {
   
 };
 
-new_game.addEventListener("click",start_game);
+new_game.addEventListener("click",startGame);
 
 
-window.onload = start_game;
+window.onload = startGame;
 
 
 
